@@ -7,18 +7,12 @@ class Solution {
         } else {
             String num = x + "";
             int n = num.length() - 1;
-            String rev = "";
-            /**while (n >= 0) {
-                rev += num.charAt(n--) + "";
-            }
-            return rev.equals(num);*/
-            int i = 0, j = n;
-            while (i <= j) {
-                if (num.charAt(i) != num.charAt(j)) {
+            int i = 0;
+            while (i <= n/2) {
+                if (num.charAt(i) != num.charAt(n-i)) {
                     return false;
                 }
                 i++;
-                j--;
             }
             return true;
         }

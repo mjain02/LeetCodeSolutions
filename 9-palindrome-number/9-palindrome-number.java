@@ -8,10 +8,19 @@ class Solution {
             String num = x + "";
             int n = num.length() - 1;
             String rev = "";
-            while (n >= 0) {
+            /**while (n >= 0) {
                 rev += num.charAt(n--) + "";
             }
-            return rev.equals(num);
+            return rev.equals(num);*/
+            int i = 0, j = n;
+            while (i <= j) {
+                if (num.charAt(i) != num.charAt(j)) {
+                    return false;
+                }
+                i++;
+                j--;
+            }
+            return true;
         }
     }
 }

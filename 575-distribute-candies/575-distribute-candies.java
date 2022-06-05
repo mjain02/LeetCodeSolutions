@@ -6,7 +6,9 @@ class Solution {
         HashMap<Integer, Integer> types = new HashMap<>();
         for (int i = 0; i < candyType.length; i++) {
             types.put(candyType[i], i);
+            if (types.size() > candies)
+                return candies;
         }
-        return types.size() <= candies? types.size() : candies;
+        return types.size();
     }
 }
